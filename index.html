@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Electra AI – Smart Election Learning Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -1733,10 +1733,54 @@
     .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .hero { flex-direction: column; padding: 90px 1.5rem 30px; gap: 2rem; text-align: center; flex-wrap: wrap; }
-    .hero-ctas { justify-content: center; }
-    .hero-visual { max-width: 240px; }
-    .stats-row { grid-template-columns: 1fr; padding: 0 1.5rem 2.5rem; gap: 1rem; }
+    .hero {
+      flex-direction: column;
+      padding: 75px 1rem 16px;
+      gap: 1.2rem;
+      text-align: center;
+      align-items: center;
+    }
+    .hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      order: 1;
+      padding: 0;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 6.5vw, 2.2rem) !important;
+      line-height: 1.15 !important;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      font-size: 0.9rem !important;
+      margin-bottom: 1.2rem;
+    }
+    .hero-badge { font-size: 0.72rem; padding: 5px 11px; }
+    .hero-ctas {
+      justify-content: center;
+      flex-direction: row !important;
+      gap: 8px;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 10px 18px !important;
+      font-size: 0.85rem !important;
+      flex: 1;
+      text-align: center;
+    }
+    .hero-visual {
+      order: 2;
+      width: 260px !important;
+      flex: 0 0 260px !important;
+    }
+    .holo-scene { width: 260px !important; height: 260px !important; }
+    .hs-label { font-size: 0.72rem; padding: 6px 12px 6px 8px; }
+    .stats-row {
+      grid-template-columns: 1fr;
+      padding: 0 1rem 2rem;
+      gap: 0.85rem;
+    }
+    .stat-card { padding: 1.2rem 1.25rem !important; }
+    .stat-num { font-size: 1.8rem !important; }
     .section { padding: 60px 1.5rem; }
     .steps-grid { grid-template-columns: 1fr; }
     .timeline::before { left: 20px; }
@@ -2685,6 +2729,29 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
+  }
+
+  /* ===== GLOBAL MOBILE FIX ===== */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .page {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .section {
+      padding: 50px 1rem !important;
+      overflow-x: hidden;
+    }
+    /* Section titles */
+    .section-title {
+      font-size: clamp(1.3rem, 5.5vw, 1.8rem) !important;
+    }
+    /* Nav right controls spacing */
+    .nav-right-controls { gap: 6px; }
+    #themeToggle { padding: 0 8px; font-size: 0.72rem; height: 30px; }
   }
 </style>
 </head>
